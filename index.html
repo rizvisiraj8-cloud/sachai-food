@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#14532d">
+<title>سچائی فوڈ | Sachai Food</title>
+<style>
+:root{--green:#14532d;--green2:#15803d;--bg:#f3f7f3;--card:#fff;--text:#17231b;--muted:#647067;--line:#dce7de;--gold:#f4b942;--red:#b42318}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Noto Nastaliq Urdu","Noto Sans Arabic",Arial,sans-serif}
+header{background:linear-gradient(135deg,#14532d,#166534);color:#fff;padding:20px 16px 18px;border-radius:0 0 24px 24px}
+.brand{display:flex;align-items:center;gap:12px}.logo{font-size:32px;background:#ffffff20;border-radius:14px;padding:8px}
+h1{font-size:24px;margin:0}header p{margin:7px 0 0;color:#e4f5e7;font-size:13px;line-height:1.8}
+.notice{margin:14px 14px 0;background:#fff7df;border:1px solid #f4d98a;padding:12px;border-radius:14px;font-size:13px;line-height:1.9}
+nav{display:flex;gap:8px;padding:14px;overflow-x:auto}
+nav button{white-space:nowrap;border:1px solid var(--line);background:#fff;color:var(--green);padding:10px 14px;border-radius:999px;font-weight:700}
+nav button.active{background:var(--green);color:#fff;border-color:var(--green)}
+main{padding:0 14px 30px;max-width:800px;margin:auto}
+section{display:none}section.active{display:block}
+.hero{background:#e2f3e6;border:1px solid #c6e5cd;border-radius:18px;padding:16px;margin-bottom:14px}
+.hero h2{margin:0 0 7px;font-size:20px}.hero p{margin:0;line-height:1.9;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.product{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:14px;text-align:right;cursor:pointer;min-height:130px}
+.product .emoji{font-size:29px}.product strong{display:block;margin-top:7px;font-size:16px}.product small{display:block;color:var(--muted);line-height:1.7;margin-top:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:15px;margin-bottom:12px}
+h2{font-size:20px;margin:4px 0 12px}h3{margin:0 0 8px;font-size:16px}
+p,li{line-height:1.9}.muted{color:var(--muted);font-size:13px}
+label{display:block;font-weight:700;margin:12px 0 6px;font-size:14px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #ccd9ce;border-radius:11px;background:#fff;color:var(--text);font:inherit}
+textarea{min-height:95px;resize:vertical}
+button.primary{width:100%;padding:13px;border:0;border-radius:12px;background:var(--green2);color:#fff;font:inherit;font-weight:700;margin-top:12px}
+button.secondary{padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--green);font:inherit}
+.tag{display:inline-block;background:#e8f5eb;color:#14532d;border-radius:999px;padding:4px 9px;font-size:12px;font-weight:700}
+.warning{background:#fff0ee;border:1px solid #f2c1bc;border-radius:12px;padding:12px;font-size:13px;line-height:1.9}
+.success{background:#e9f7ec;border:1px solid #b9e1c2;border-radius:12px;padding:12px;margin-top:12px;line-height:1.8}
+.report{border-bottom:1px solid var(--line);padding:12px 0}.report:last-child{border:0}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:18px}
+ul{padding-right:22px}
+@media(min-width:600px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}header,nav,main{padding-left:22px;padding-right:22px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><div class="logo">🧪</div><div><h1>سچائی فوڈ</h1><div style="font-size:13px">Sachai Food • خوراک کے بارے میں باخبر فیصلہ</div><div style="font-size:12px;direction:ltr;text-align:right">Informed Choices About Food</div></div></div>
+  <p>دودھ، گھی، شہد اور مصالحوں کی معلومات، لیبارٹری رپورٹس اور مشکوک مصنوعات کی ذمہ دارانہ رپورٹنگ۔<br><span lang="en" dir="ltr">Information on milk, ghee, honey and spices, lab reports, and responsible reporting of suspicious products.</span></p>
+</header>
+<div class="notice">⚠️ <b>اہم حفاظتی بات | Important Safety Notice:</b> یہ ایپ معلومات اور رپورٹس جمع کرنے کے لیے ہے۔ صرف رنگ، ذائقے، خوشبو، تصویر یا گھریلو ٹوٹکے سے ملاوٹ کی تصدیق نہیں ہوتی۔ قابلِ اعتماد نتیجے کے لیے مستند لیبارٹری کی جانچ ضروری ہو سکتی ہے۔<br><span lang="en" dir="ltr">This app collects information and reports. Color, taste, smell, photos, or home remedies cannot confirm adulteration. A certified laboratory test may be needed for reliable results.</span></div>
+<nav id="tabs">
+<button class="active" data-tab="home">🏠 ہوم<br><small>Home</small></button>
+<button data-tab="guide">📚 معلومات<br><small>Information</small></button>
+<button data-tab="lab">🧾 لیبارٹری رپورٹ<br><small>Lab Reports</small></button>
+<button data-tab="report">🚩 مشکوک چیز رپورٹ کریں<br><small>Report Suspicious Item</small></button>
+<button data-tab="saved">📂 محفوظ ریکارڈ<br><small>Saved Records</small></button>
+</nav>
+<main>
+<section id="home" class="active">
+  <div class="hero"><h2>صحیح معلومات، بہتر انتخاب</h2><h3 dir="ltr">Better Information, Better Choices</h3><p>کسی خوراک کے بارے میں فیصلہ کرنے سے پہلے لیبل، تاریخ، پیکنگ، معتبر ٹیسٹ اور سرکاری ہدایات دیکھیں۔</p><p dir="ltr">Check the label, dates, packaging, reliable tests, and official guidance before deciding about food.</p></div>
+  <h2>خوراک کی قسم منتخب کریں</h2><h3 dir="ltr">Select a Food Category</h3>
+  <div class="grid">
+    <button class="product" data-product="milk"><span class="emoji">🥛</span><strong>دودھ | Milk</strong><small>لیبل، محفوظ رکھنا اور ٹیسٹ<br>Label, storage and testing</small></button>
+    <button class="product" data-product="ghee"><span class="emoji">🧈</span><strong>گھی / مکھن | Ghee / Butter</strong><small>اجزاء، پیکنگ اور رپورٹ<br>Ingredients, packaging and reports</small></button>
+    <button class="product" data-product="honey"><span class="emoji">🍯</span><strong>شہد | Honey</strong><small>اصلیت کی جانچ کے بارے میں<br>Authenticity testing information</small></button>
+    <button class="product" data-product="spices"><span class="emoji">🌶️</span><strong>مصالحے | Spices</strong><small>پیکنگ، لیبل اور آلودگی<br>Packaging, labels and contamination</small></button>
+  </div>
+  <div class="card" style="margin-top:14px"><h3>ایپ کیسے کام کرتی ہے؟</h3><ol><li>خوراک کی قسم منتخب کریں۔</li><li>محفوظ ہدایات پڑھیں۔</li><li>اگر لیبارٹری رپورٹ ہے تو اس کی تفصیل درج کریں۔</li><li>شک ہو تو الزام لگانے کے بجائے مشاہدہ اور ثبوت رپورٹ کریں۔</li></ol></div>
+  <div class="warning">یہ ابتدائی نمونہ ہے۔ فی الحال ریکارڈ اسی ڈیوائس کے براؤزر میں محفوظ ہوتا ہے؛ دوسرے صارفین یا ماہرین کو خودکار طور پر نہیں بھیجا جاتا۔<br><span dir="ltr">This is an early demo. Records are stored in this device's browser and are not automatically sent to other users or experts.</span></div>
+</section>
+
+<section id="guide">
+  <h2>خوراک کے بارے میں معلومات</h2><h3 dir="ltr">Food Information</h3>
+  <div class="card"><label for="guideSelect">خوراک منتخب کریں</label><select id="guideSelect"><option value="milk">دودھ</option><option value="ghee">گھی / مکھن</option><option value="honey">شہد</option><option value="spices">مصالحے</option></select><div id="guideContent"></div></div>
+  <div class="warning"><b>یاد رکھیں:</b> کوئی ایک گھریلو ٹیسٹ ہر قسم کی ملاوٹ نہیں پکڑ سکتا۔ نامعلوم کیمیکل استعمال نہ کریں، خوراک چکھ کر ٹیسٹ نہ کریں، اور مشکوک نمونے بچوں سے دور رکھیں۔<br><span dir="ltr">No single home test detects every type of adulteration. Do not use unknown chemicals or taste food to test it. Keep suspicious samples away from children.</span></div>
+</section>
+
+<section id="lab">
+  <h2>لیبارٹری رپورٹ درج کریں</h2><h3 dir="ltr">Enter a Laboratory Report</h3>
+  <p class="muted">صرف اصل رپورٹ سے معلومات درج کریں۔ یہ فارم رپورٹ کی صداقت خود تصدیق نہیں کرتا۔</p>
+  <form id="labForm" class="card">
+    <label>خوراک کی قسم<small dir="ltr" style="display:block;font-weight:400;color:#647067">Food Category</small></label><select name="product" required><option value="دودھ">دودھ</option><option value="گھی / مکھن">گھی / مکھن</option><option value="شہد">شہد</option><option value="مصالحے">مصالحے</option><option value="دیگر">دیگر</option></select>
+    <label>برانڈ / نمونے کا نام<small dir="ltr" style="display:block;font-weight:400;color:#647067">Brand / Sample Name</small></label><input name="name" maxlength="100" placeholder="مثلاً نمونے کا نام" required>
+    <label>لیبارٹری کا نام<small dir="ltr" style="display:block;font-weight:400;color:#647067">Laboratory Name</small></label><input name="lab" maxlength="120" placeholder="رپورٹ پر درج نام" required>
+    <label>رپورٹ نمبر<small dir="ltr" style="display:block;font-weight:400;color:#647067">Report Number</small></label><input name="number" maxlength="80" placeholder="رپورٹ نمبر">
+    <label>ٹیسٹ کی تاریخ<small dir="ltr" style="display:block;font-weight:400;color:#647067">Test Date</small></label><input name="date" type="date" required>
+    <label>رپورٹ کا نتیجہ (رپورٹ کے مطابق)<small dir="ltr" style="display:block;font-weight:400;color:#647067">Report Result (as stated in report)</small></label><select name="result" required><option value="">منتخب کریں</option><option>معیار کے مطابق</option><option>معیار سے ہٹ کر</option><option>نتیجہ غیر واضح / مزید ٹیسٹ درکار</option></select>
+    <label>ٹیسٹ کی تفصیل / مشاہدات<small dir="ltr" style="display:block;font-weight:400;color:#647067">Test Details / Observations</small></label><textarea name="details" maxlength="1200" placeholder="صرف رپورٹ میں لکھی معلومات درج کریں"></textarea>
+    <label>رپورٹ کا حوالہ یا ویب لنک (اختیاری)<small dir="ltr" style="display:block;font-weight:400;color:#647067">Report Reference or Website Link (optional)</small></label><input name="link" type="url" placeholder="https://...">
+    <button class="primary" type="submit">رپورٹ محفوظ کریں<br><small>Save Report</small></button>
+  </form>
+  <div id="labMessage" aria-live="polite"></div>
+</section>
+
+<section id="report">
+  <h2>مشکوک خوراک کی رپورٹ</h2><h3 dir="ltr">Report Suspicious Food</h3>
+  <p class="muted">یہ رپورٹ ابتدائی معلومات ہے، حتمی ثبوت نہیں۔ کسی شخص یا کاروبار پر غیر ثابت شدہ الزام شائع نہ کریں۔</p>
+  <form id="flagForm" class="card">
+    <label>خوراک کی قسم<small dir="ltr" style="display:block;font-weight:400;color:#647067">Food Category</small></label><select name="product" required><option>دودھ</option><option>گھی / مکھن</option><option>شہد</option><option>مصالحے</option><option>دیگر خوراک</option></select>
+    <label>مصنوعات / برانڈ کا نام (اگر معلوم ہو)<small dir="ltr" style="display:block;font-weight:400;color:#647067">Product / Brand Name (if known)</small></label><input name="name" maxlength="100" placeholder="نام یا نامعلوم">
+    <label>علاقہ (گھر کا مکمل پتہ نہ لکھیں)<small dir="ltr" style="display:block;font-weight:400;color:#647067">Area (do not enter your full home address)</small></label><input name="area" maxlength="100" placeholder="مثلاً حب، بلوچستان" required>
+    <label>مسئلہ کس بنیاد پر محسوس ہوا؟<small dir="ltr" style="display:block;font-weight:400;color:#647067">Reason for Concern</small></label><select name="reason" required><option value="">منتخب کریں</option><option>پیکنگ خراب یا کھلی ہوئی</option><option>میعاد ختم</option><option>لیبل یا اجزاء مشکوک</option><option>لیبارٹری رپورٹ موجود ہے</option><option>بیماری یا غیر معمولی ردعمل</option><option>دیگر مشاہدہ</option></select>
+    <label>تفصیل (صرف اپنا مشاہدہ لکھیں)<small dir="ltr" style="display:block;font-weight:400;color:#647067">Details (your own observations only)</small></label><textarea name="details" maxlength="1200" placeholder="کیا دیکھا؟ کب خریدا؟ کیا رپورٹ موجود ہے؟" required></textarea>
+    <label>رابطہ (اختیاری، عوامی طور پر شائع نہ کریں)<small dir="ltr" style="display:block;font-weight:400;color:#647067">Contact (optional; do not publish publicly)</small></label><input name="contact" maxlength="80" placeholder="اختیاری">
+    <button class="primary" type="submit">رپورٹ اس ڈیوائس میں محفوظ کریں<br><small>Save Report on This Device</small></button>
+  </form>
+  <div id="flagMessage" aria-live="polite"></div>
+  <div class="warning">اگر کھانے سے شدید طبیعت خراب ہو تو فوری طبی مدد حاصل کریں۔ متعلقہ مقامی فوڈ سیفٹی اتھارٹی کو اطلاع دیں۔ مشکوک خوراک مزید نہ کھائیں۔</div>
+</section>
+
+<section id="saved">
+  <h2>محفوظ ریکارڈ</h2><h3 dir="ltr">Saved Records</h3>
+  <p class="muted">یہ ریکارڈ صرف اسی براؤزر/ڈیوائس میں رہتا ہے۔ براؤزر کا ڈیٹا صاف کرنے سے مٹ سکتا ہے۔</p>
+  <div class="card"><h3>لیبارٹری رپورٹس</h3><div id="labList"></div></div>
+  <div class="card"><h3>مشکوک مصنوعات کی رپورٹس</h3><div id="flagList"></div></div>
+  <button class="secondary" id="exportBtn">ریکارڈ JSON فائل میں برآمد کریں<br><small>Export Records as JSON</small></button>
+  <button class="secondary" id="clearBtn" style="color:#b42318;margin-right:6px">تمام مقامی ریکارڈ حذف کریں<br><small>Delete All Local Records</small></button>
+  <div id="savedMessage" aria-live="polite"></div>
+</section>
+</main>
+<footer>سچائی فوڈ • معلوماتی نمونہ، سرکاری یا لیبارٹری سرٹیفکیشن نہیں<br><span dir="ltr">Sachai Food • Informational demo, not government-approved or laboratory-certified</span></footer>
+
+<script>
+const guides={
+ milk:{title:"🥛 دودھ",items:["پیکٹ پر اجزاء، میعاد، بیچ نمبر اور بنانے والے کی معلومات دیکھیں۔<br><span dir='ltr'>Check ingredients, expiry date, batch number and manufacturer details.</span>","دودھ کو لیبل کی ہدایات کے مطابق ٹھنڈا رکھیں؛ دیر تک کمرے کے درجہ حرارت پر نہ چھوڑیں۔<br><span dir='ltr'>Keep milk chilled as directed on the label; do not leave it at room temperature for long.</span>","بو یا رنگ معمول کے مطابق ہونے سے دودھ کے محفوظ یا خالص ہونے کی ضمانت نہیں۔<br><span dir='ltr'>Normal smell or color does not guarantee milk is safe or pure.</span>","ملاوٹ یا جراثیم کی تصدیق کے لیے متعلقہ لیبارٹری کے ٹیسٹ درکار ہو سکتے ہیں۔<br><span dir='ltr'>Laboratory testing may be needed to check for adulteration or microbes.</span>"]},
+ ghee:{title:"🧈 گھی / مکھن",items:["اجزاء، بنانے والے، بیچ نمبر، تاریخ اور سیل بند پیکنگ دیکھیں۔<br><span dir='ltr'>Check ingredients, manufacturer, batch number, dates and sealed packaging.</span>","نامعلوم یا کھلی ہوئی مصنوعات خریدتے وقت احتیاط کریں۔<br><span dir='ltr'>Be cautious when buying unknown or unpackaged products.</span>","جمنا، پگھلنا، رنگ یا خوشبو اکیلے خالص ہونے کا ثبوت نہیں۔<br><span dir='ltr'>Texture, melting, color or smell alone cannot prove purity.</span>","چکنائی کی قسم یا ملاوٹ جانچنے کے لیے مناسب لیبارٹری تجزیہ ضروری ہو سکتا ہے۔<br><span dir='ltr'>Suitable laboratory analysis may be needed to identify fats or adulteration.</span>"]},
+ honey:{title:"🍯 شہد",items:["لیبل، اجزاء، ماخذ اور قابلِ تصدیق بیچ معلومات دیکھیں۔<br><span dir='ltr'>Check the label, ingredients, source and verifiable batch details.</span>","شہد کا جم جانا یا نہ جمنا خالص ہونے کا قطعی ٹیسٹ نہیں۔<br><span dir='ltr'>Crystallization or lack of it is not a definitive purity test.</span>","پانی، آگ یا چیونٹی جیسے گھریلو ٹوٹکے قابلِ اعتماد تصدیق نہیں کرتے۔<br><span dir='ltr'>Home tests involving water, flame or ants are not reliable proof.</span>","شکر کے اضافے یا اصلیت کی جانچ کے لیے مناسب لیبارٹری ٹیسٹ درکار ہو سکتے ہیں۔<br><span dir='ltr'>Laboratory tests may be needed to check added sugars or authenticity.</span>"]},
+ spices:{title:"🌶️ مصالحے",items:["سیل بند پیکنگ، اجزاء، میعاد، بیچ نمبر اور معتبر فروخت کنندہ دیکھیں۔<br><span dir='ltr'>Check sealed packaging, ingredients, expiry date, batch number and seller.</span>","غیر معمولی رنگ یا ذرات پر شک ہو تو اسے ثبوت نہ سمجھیں؛ نمونہ محفوظ رکھیں۔<br><span dir='ltr'>Unusual color or particles are not proof; keep the sample safely.</span>","نامعلوم پاؤڈر کو چکھیں یا سونگھنے کے لیے قریب نہ لائیں۔<br><span dir='ltr'>Do not taste unknown powders or bring them close to smell.</span>","رنگوں، آلودگی یا ملاوٹ کے لیے مخصوص لیبارٹری ٹیسٹ درکار ہو سکتے ہیں۔<br><span dir='ltr'>Specific laboratory tests may be needed for dyes, contamination or adulteration.</span>"]}
+};
+const $=id=>document.getElementById(id);
+function read(key){try{return JSON.parse(localStorage.getItem(key)||'[]')}catch(e){return []}}
+function write(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true}catch(e){alert('اس ڈیوائس میں جگہ کم ہے یا مقامی اسٹوریج دستیاب نہیں۔');return false}}
+function showTab(id){document.querySelectorAll('section').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));if(id==='saved')renderSaved();window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+document.querySelectorAll('[data-product]').forEach(b=>b.addEventListener('click',()=>{$('guideSelect').value=b.dataset.product;renderGuide();showTab('guide')}));
+function renderGuide(){const g=guides[$('guideSelect').value];$('guideContent').innerHTML='<h3>'+g.title+'</h3><ul>'+g.items.map(x=>'<li>'+x+'</li>').join('')+'</ul>'}
+$('guideSelect').addEventListener('change',renderGuide);renderGuide();
+$('labForm').addEventListener('submit',e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target).entries());d.savedAt=new Date().toISOString();const arr=read('sachai_labs');arr.unshift(d);if(write('sachai_labs',arr)){$('labMessage').innerHTML='<div class="success">رپورٹ اس ڈیوائس میں محفوظ ہوگئی۔ اسے ابھی تصدیق شدہ یا عوامی رپورٹ نہ سمجھیں۔</div>';e.target.reset()}});
+$('flagForm').addEventListener('submit',e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target).entries());d.savedAt=new Date().toISOString();const arr=read('sachai_flags');arr.unshift(d);if(write('sachai_flags',arr)){$('flagMessage').innerHTML='<div class="success">آپ کی مشکوک مصنوعات کی رپورٹ اس ڈیوائس میں محفوظ ہوگئی۔ یہ خودکار طور پر کسی ادارے کو نہیں بھیجی گئی۔</div>';e.target.reset()}});
+function escapeHtml(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderSaved(){
+ const labs=read('sachai_labs'),flags=read('sachai_flags');
+ $('labList').innerHTML=labs.length?labs.map(x=>'<div class="report"><b>'+escapeHtml(x.product)+' — '+escapeHtml(x.name)+'</b><div class="muted">لیبارٹری: '+escapeHtml(x.lab)+' • تاریخ: '+escapeHtml(x.date)+'</div><div>'+escapeHtml(x.result)+'</div><div class="muted">حوالہ: '+escapeHtml(x.number||'درج نہیں')+'</div><p>'+escapeHtml(x.details)+'</p></div>').join(''):'<p class="muted">ابھی کوئی رپورٹ محفوظ نہیں۔</p>';
+ $('flagList').innerHTML=flags.length?flags.map(x=>'<div class="report"><b>'+escapeHtml(x.product)+' — '+escapeHtml(x.name||'نام درج نہیں')+'</b><div class="muted">علاقہ: '+escapeHtml(x.area)+' • وجہ: '+escapeHtml(x.reason)+'</div><p>'+escapeHtml(x.details)+'</p><span class="tag">غیر تصدیق شدہ رپورٹ</span></div>').join(''):'<p class="muted">ابھی کوئی رپورٹ محفوظ نہیں۔</p>';
+}
+$('exportBtn').addEventListener('click',()=>{const data={labs:read('sachai_labs'),flags:read('sachai_flags'),exportedAt:new Date().toISOString()};const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='sachai-food-records.json';a.click();URL.revokeObjectURL(a.href);$('savedMessage').textContent='برآمد شروع ہوگئی؛ اگر ڈاؤن لوڈ نہ ہو تو براؤزر اجازت دیکھیں۔'});
+$('clearBtn').addEventListener('click',()=>{if(confirm('کیا آپ واقعی اس ڈیوائس کے تمام محفوظ ریکارڈ حذف کرنا چاہتے ہیں؟')){localStorage.removeItem('sachai_labs');localStorage.removeItem('sachai_flags');renderSaved();$('savedMessage').textContent='مقامی ریکارڈ حذف ہوگیا۔'}});
+window.addEventListener('storage',renderSaved);
+</script>
+</body>
+</html>
