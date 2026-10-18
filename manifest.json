@@ -1,13 +1,16 @@
 {
-  "background_color": "#ffffff",
-  "dir": "ltr",
-  "display": "standalone",
   "name": "Sachai Food",
-  "orientation": "any",
-  "scope": "/",
   "short_name": "Food",
-  "start_url": "/",
-  "theme_color": "#ffffff",
-  "id": "sachai-food",
-  "description": "Sachai Food Application"
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#14532d",
+  "description": "Sachai Food Application",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
